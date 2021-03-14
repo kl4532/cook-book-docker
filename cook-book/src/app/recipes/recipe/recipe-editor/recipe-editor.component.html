@@ -1,0 +1,57 @@
+<h2 *ngIf="!modeEdit">Create new recipe</h2>
+<h2 *ngIf="modeEdit">Edit recipe</h2>
+
+<form [formGroup]="recipeForm" *ngIf="recipeForm">
+  <mat-form-field appearance="standard">
+    <mat-label>Recipe name</mat-label>
+    <input matInput formControlName="name">
+    <mat-error *ngIf="recipeForm.controls.name.invalid">Min 3 / Max 80 characters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Preparation time</mat-label>
+    <input matInput formControlName="preparationTimeInMinutes">
+    <span matSuffix>min</span>
+    <mat-error *ngIf="recipeForm.controls.preparationTimeInMinutes.invalid">Must be positive numeral</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+    <mat-error *ngIf="recipeForm.controls.description.invalid">Min 15 / Max 2000 characters</mat-error>
+  </mat-form-field>
+
+<!--  Ingredients formArray-->
+  <div class="ingredient-header">
+    <h4>Ingredients <small [style.color]="'#f44336'" *ngIf="this.ingredients.length<2">(min. two)</small></h4>
+    <button mat-mini-fab color="accent" type="button" (click)="addItem('', '', '')"><mat-icon>add</mat-icon></button>
+  </div>
+
+  <ng-container *ngIf="ingredients">
+    <ng-container formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i = index;">
+      <div class="ingredient-group" [formGroupName]="i">
+        <mat-form-field appearance="standard">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount">
+<!--          <mat-error *ngIf="ingredient.controls['quantity']invalid">Must be positive numeral</mat-error>-->
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Unit</mat-label>
+          <input matInput formControlName="unit">
+        </mat-form-field>
+        <button mat-icon-button color="warn" type="button" (click)="removeItem(i)"><mat-icon>remove_circle</mat-icon></button>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <div class="form-buttons">
+    <button mat-raised-button [disabled]="recipeForm.invalid || recipeForm.pristine" color="primary" (click)="onSave()">Save</button>
+    <button type="submit" mat-raised-button (click)="onCancel()">Cancel</button>
+  </div>
+
+</form>
+

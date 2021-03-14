@@ -1,0 +1,19 @@
+<ng-container *ngIf="recipeDetails">
+  <div class="header">
+    <h1><mat-icon [style.font-size]="'30px'">room_service</mat-icon> {{recipeDetails.name}}</h1>
+    <button [routerLink]="['/recipe-editor', recipeDetails._id]"
+            mat-raised-button color="accent">Edit</button>
+    <button (click)="onDeleteRecipe(recipeDetails._id)"
+            mat-raised-button color="warn">Delete</button>
+  </div>
+  <p>{{recipeDetails.description}}</p>
+  <h3 class="align-vertically"><mat-icon>access_time</mat-icon> Preparation time: {{recipeDetails.preparationTimeInMinutes | convertTime}}</h3>
+  <h3 class="align-vertically"><mat-icon> list_alt</mat-icon> Ingredients</h3>
+
+  <mat-list>
+    <mat-list-item *ngFor='let ingredient of recipeDetails.ingredients' class="ingredients-list">
+      <mat-icon>chevron_right</mat-icon>
+      <p>{{ingredient.name}} - {{ingredient.amount}} ({{ingredient.unit}})</p>
+    </mat-list-item>
+  </mat-list>
+</ng-container>

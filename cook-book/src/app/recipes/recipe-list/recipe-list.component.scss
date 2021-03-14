@@ -1,0 +1,16 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.3em;
+}
+
+.add-recipe-button {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.mat-form-field {
+  padding: 0 0.8em;
+}

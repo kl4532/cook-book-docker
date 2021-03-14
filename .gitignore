@@ -1,0 +1,9 @@
+# Dependencies
+
+cook-book-api/node_modules
+cook-book/node_modules
+cook-book/dist
+
+# Intelij
+
+.idea

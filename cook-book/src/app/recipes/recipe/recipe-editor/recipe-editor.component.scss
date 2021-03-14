@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  .ingredient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ingredient-group{
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+
+    mat-form-field + .mat-form-field {
+      margin-left: 0.5em;
+    }
+
+    .mat-form-field{
+      width: 12em;
+    }
+
+    .mat-form-field:nth-child(2) {
+      width: 4em;
+    }
+  }
+
+  .form-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+
+    button {
+      margin: 2em 0.5em;
+    }
+  }
+}

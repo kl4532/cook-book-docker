@@ -1,0 +1,12 @@
+.mat-typography {
+  display: flex;
+  flex-direction: column;
+  a {
+    &:focus{
+      outline-offset: -1px;
+    }
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+}

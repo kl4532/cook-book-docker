@@ -1,0 +1,30 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 3px 0px rgba(50, 50, 50, 0.75);
+  background-color: #9c27b0;
+  color: #ffffff;
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    max-width: 2.5em;
+  }
+  height: 10%;
+  padding-left: 0.5em;
+}
+
+mat-drawer {
+  min-width: 25%;
+  @media (max-width:400px){
+    min-width: 75%;
+  }
+}
+
+mat-drawer-container {
+  height: 90%;
+}
+.content {
+  padding: 0 2em;
+}

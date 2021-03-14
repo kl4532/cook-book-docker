@@ -1,0 +1,60 @@
+{
+  "recipes": [
+    {
+      "_id": "0",
+      "name": "gulasz",
+      "preparationTimeInMinutes": 125,
+      "description": "Tasty gulasz",
+      "ingredients": [
+        {
+          "_id": "0",
+          "name": "meat",
+          "quantity": "100"
+        },
+        {
+          "_id": "1",
+          "name": "tomatoes",
+          "quantity": "10"
+        },
+        {
+          "_id": "2",
+          "name": "paprica",
+          "quantity": "2"
+        }
+      ]
+    },
+    {
+      "_id": "1",
+      "name": "salad",
+      "preparationTimeInMinutes": 25,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam autem, blanditiis commodi esse laudantium maxime molestias nisi nostrum obcaecati optio quaerat qui quisquam reiciendis repellendus suscipit ullam. Tempora, tempore!",
+      "ingredients": [
+        {
+          "_id": "1",
+          "name": "tomatoes",
+          "quantity": "2"
+        },
+        {
+          "_id": "3",
+          "name": "lettuce",
+          "quantity": "1"
+        },
+        {
+          "_id": "2",
+          "name": "paprica",
+          "quantity": "1"
+        },
+        {
+          "_id": "4",
+          "name": "avocado",
+          "quantity": "1"
+        },
+        {
+          "_id": "5",
+          "name": "olive",
+          "quantity": "1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<mat-form-field>
+  <mat-label>Search for</mat-label>
+  <input matInput type="text" [(ngModel)]="searchValue" (ngModelChange)="filterRecipes()">
+</mat-form-field>
+<mat-nav-list>
+  <mat-list>
+    <mat-list-item [routerLink]="['/recipe-details', recipe._id]" *ngFor="let recipe of filteredRecipes">
+      <p class="recipe-list-item">{{ recipe.name }}</p>
+      <div class="buttons">
+        <button (click)="$event.stopImmediatePropagation();" [routerLink]="['/recipe-editor', recipe._id]"
+                mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
+        <button (click)="$event.stopImmediatePropagation(); onDeleteRecipe(recipe._id)"
+                mat-icon-button color="warn"><mat-icon>remove_circle</mat-icon></button>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-nav-list>
+
+<div class="add-recipe-button">
+  <button [routerLink]="['/recipe-editor']" mat-fab aria-label="Add recipe button">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+
