@@ -3,3 +3,7 @@ build:
     database: database/Dockerfile
     backend: cook-book-api/Dockerfile
     frontend: cook-book/Dockerfile
+release:
+  image: frontend
+  command:
+    - echo 'Starting frontend after deployment!';
